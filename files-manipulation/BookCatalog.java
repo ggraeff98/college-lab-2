@@ -1,8 +1,6 @@
-package com.college.exercise;
-
 import java.io.*;
 
-public class BookCatalog {
+public class BookCatalog implements IBookCatalog {
 
     Book[] booksList;
     int storedAmountOfBooks = 0;
@@ -11,6 +9,7 @@ public class BookCatalog {
         booksList = new Book[arrayLength];
     }
 
+    @Override
     public void load(File file) throws Exception {
 
         try {
@@ -35,12 +34,14 @@ public class BookCatalog {
         }
     }
 
+    @Override
     public void list() {
         for (int i = 0; i < booksList.length; i++) {
             System.out.println(booksList[i]);
         }
     }
 
+    @Override
     public void add(Book book) {
 
         if (booksList.length - storedAmountOfBooks <= 0) {
@@ -56,6 +57,7 @@ public class BookCatalog {
         }
     }
 
+    @Override
     public void remove(int bookPositionOnList) {
         if (booksList.length <= bookPositionOnList) {
             System.out.println("Invalid position!");
@@ -72,10 +74,10 @@ public class BookCatalog {
                 booksList[i] = booksList[i + 1];
             }
         }
-
         booksList[booksList.length - 1] = null;
     }
 
+    @Override
     public void save(File file) throws IOException {
         FileWriter fw = new FileWriter(file);
 
@@ -88,7 +90,6 @@ public class BookCatalog {
                     + booksList[i].getPrice());
             fw.write("\n");
         }
-
         fw.close();
     }
 }

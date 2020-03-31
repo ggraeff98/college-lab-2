@@ -1,5 +1,3 @@
-package com.college.exercise;
-
 import java.io.*;
 
 public class BookCatalogTest {

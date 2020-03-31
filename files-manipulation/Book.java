@@ -1,5 +1,3 @@
-package com.college.exercise;
-
 public class Book {
 
     private String title;
