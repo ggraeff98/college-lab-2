@@ -35,7 +35,7 @@ public class BookCatalogTest {
                 "Livro NOVO",
                 "1234567891234",
                 "Editora NOVA",
-                "www.L&GFOREVER.com",
+                "www.NOVO.com",
                 19.99);
 
         bookCatalog.add(book);
